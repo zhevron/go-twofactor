@@ -3,6 +3,7 @@ go2fa - Two-factor authentication for Google Go
 
 [![Coverage Status](https://img.shields.io/coveralls/zhevron/go2fa.svg)](https://coveralls.io/r/zhevron/go2fa)
 [![Build Status](https://travis-ci.org/zhevron/go2fa.svg?branch=master)](https://travis-ci.org/zhevron/go2fa)
+[![GoDoc](https://godoc.org/github.com/zhevron/go2fa?status.svg)](https://godoc.org/github.com/zhevron/go2fa)
 
 go2fa is a Go library for handling two-factor authentication.
 
