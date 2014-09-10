@@ -20,4 +20,9 @@ Time-based One Time Password (TOTP) [![GoDoc](https://godoc.org/github.com/zhevr
 go get gopkg.in/zhevron/go2fa.v1/totp
 ```
 
+HMAC-based One Time Password (HOTP) [![GoDoc](https://godoc.org/github.com/zhevron/go2fa/hotp?status.svg)](https://godoc.org/github.com/zhevron/go2fa/hotp)
+```
+go get gopkg.in/zhevron/go2fa.v1/hotp
+```
+
 go2fa is licensed under the [MIT license](http://opensource.org/licenses/MIT).
