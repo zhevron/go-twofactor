@@ -10,14 +10,14 @@ go2fa is a Go library for handling two-factor authentication.
 You can install the library using Go:
 
 ```
-go get github.com/zhevron/go2fa
+go get gopkg.in/zhevron/go2fa.v1
 ```
 
 You will also need to install one of the implementations.
 
-Time-based One Time Password (TOTP):
+Time-based One Time Password (TOTP) [![GoDoc](https://godoc.org/github.com/zhevron/go2fa/totp?status.svg)](https://godoc.org/github.com/zhevron/go2fa/totp)
 ```
-go get github.com/zhevron/go2fa/totp
+go get gopkg.in/zhevron/go2fa.v1/totp
 ```
 
 go2fa is licensed under the [MIT license](http://opensource.org/licenses/MIT).

@@ -1,4 +1,30 @@
+// Copyright (C) 2014 Thomas Lokshall
+// Use of this source code is governed by the MIT license.
+// See LICENSE.md for details.
+
 // Package totp contains an RFC6238 implementation of time-based one time passwords.
+//
+// To be able to generate codes, you need to create a TOTP object using a secret:
+//		import (
+//			"gopkg.in/zhevron/go2fa.v1"
+//			"gopkg.in/zhevron/go2fa.v1/totp"
+//		)
+//		secret := go2fa.NewSecret(0)
+//		otp := totp.NewTOTP(secret, 0, 0)
+//
+// After creating the TOTP object, you can easily generate the current code by calling the Code method:
+//		code, err := otp.Code()
+//		if err != nil {
+//			// Failed to generate the code
+//		}
+//
+// A convenience method is also provided for checking if a code is valid using time period offset:
+//		code := 123456
+//		if otp.Validate(code, 0) {
+//			// Code is valid
+//		} else {
+//			// Code is not valid
+//		}
 package totp
 
 import (
@@ -65,15 +91,17 @@ func (t TOTP) ForPeriod(n int64) (int32, error) {
 	return t.generateCode(n)
 }
 
-// ForPeriodOffset returns the code from the period of current+offset.
+// ForPeriodOffset returns the code from the time period of current+offset.
 func (t TOTP) ForPeriodOffset(n int64) (int32, error) {
 	return t.ForPeriod(t.currentPeriod() + n)
 }
 
+// currentPeriod returns the current time period.
 func (t TOTP) currentPeriod() int64 {
 	return time.Now().Unix() / int64(t.duration)
 }
 
+// generateCode returns the calculated code for the given time period.
 func (t TOTP) generateCode(n int64) (int32, error) {
 	var code int32
 	b, err := t.secret.Bytes()
