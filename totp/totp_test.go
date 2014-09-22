@@ -3,7 +3,7 @@ package totp
 import (
 	"testing"
 
-	"github.com/zhevron/go2fa"
+	"github.com/golinux-io/go2fa"
 	. "gopkg.in/check.v1"
 )
 
