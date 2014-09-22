@@ -6,8 +6,8 @@
 //
 // To be able to generate codes, you need to create a TOTP object using a secret:
 //		import (
-//			"gopkg.in/zhevron/go2fa.v1"
-//			"gopkg.in/zhevron/go2fa.v1/totp"
+//			"gopkg.in/golinux-io/go2fa.v1"
+//			"gopkg.in/golinux-io/go2fa.v1/totp"
 //		)
 //		secret := go2fa.NewSecret(0)
 //		otp := totp.NewTOTP(secret, 0, 0)
@@ -33,7 +33,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/zhevron/go2fa"
+	"github.com/golinux-io/go2fa"
 )
 
 // TOTP implements time-based one time passwords as specified in RFC6238 (http://tools.ietf.org/html/rfc6238).
