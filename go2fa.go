@@ -7,7 +7,7 @@
 // This package provides shared structs and functions for all implementations.
 //
 // To generate a new secret for 2FA, use the NewSecret method:
-//		import "gopkg.in/zhevron/go2fa"
+//		import "gopkg.in/golinux-io/go2fa.v1"
 //		secret := go2fa.NewSecret(0)
 package go2fa
 
