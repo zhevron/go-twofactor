@@ -1,23 +1,22 @@
-go2fa - Two-factor authentication for Google Go
-===============================================
+twofactor - Two-factor authentication library
+=============================================
 
-[![Coverage Status](https://img.shields.io/coveralls/zhevron/go2fa.svg)](https://coveralls.io/r/zhevron/go2fa)
-[![Build Status](https://travis-ci.org/zhevron/go2fa.svg?branch=master)](https://travis-ci.org/zhevron/go2fa)
-[![GoDoc](https://godoc.org/github.com/zhevron/go2fa?status.svg)](https://godoc.org/github.com/zhevron/go2fa)
+[![Coverage Status](https://img.shields.io/coveralls/zhevron/twofactor.svg)](https://coveralls.io/r/zhevron/twofactor)
+[![Build Status](https://travis-ci.org/zhevron/twofactor.svg?branch=master)](https://travis-ci.org/zhevron/twofactor)
 
-go2fa is a Go library for handling two-factor authentication.
+**twofactor** is a library for handling two-factor authentication in [Go](https://golang.org/).  
+To use the library, you need to install one of the implementations below.
 
-You can install the library using Go:
+## YAML
+
+[![GoDoc](https://godoc.org/github.com/zhevron/twofactor/totp?status.svg)](https://godoc.org/github.com/zhevron/twofactor/totp)
+
+This implementation reads and writes [YAML](http://www.yaml.org/) files.
 
 ```
-go get gopkg.in/zhevron/go2fa.v1
+go get gopkg.in/zhevron/twofactor.v1/totp
 ```
 
-You can also choose to install one of the implementations instead.
+## License
 
-Time-based One Time Password (TOTP) [![GoDoc](https://godoc.org/github.com/zhevron/go2fa/totp?status.svg)](https://godoc.org/github.com/zhevron/go2fa/totp)
-```
-go get gopkg.in/zhevron/go2fa.v1/totp
-```
-
-go2fa is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+**twofactor** is licensed under the [MIT license](http://opensource.org/licenses/MIT).
