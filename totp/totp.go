@@ -1,4 +1,4 @@
-// Copyright (C) 2014 Thomas Lokshall
+// Copyright (C) 2014-2015 Thomas Lokshall
 // Use of this source code is governed by the MIT license.
 // See LICENSE.md for details.
 
