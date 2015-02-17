@@ -2,14 +2,14 @@
 // Use of this source code is governed by the MIT license.
 // See LICENSE.md for details.
 
-// Package go2fa contains support functions and types for two-factor authentication.
+// Package twofactor contains support functions and types for two-factor authentication.
 //
 // This package provides shared structs and functions for all implementations.
 //
 // To generate a new secret for 2FA, use the NewSecret method:
-//		import "gopkg.in/zhevron/go2fa.v1"
-//		secret := go2fa.NewSecret(0)
-package go2fa
+//		import "gopkg.in/zhevron/twofactor.v1"
+//		secret := twofactor.NewSecret(0)
+package twofactor
 
 import (
 	"crypto/rand"

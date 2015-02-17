@@ -1,4 +1,4 @@
-package go2fa
+package twofactor
 
 import (
 	"bytes"
@@ -12,11 +12,11 @@ func Test(t *testing.T) {
 	TestingT(t)
 }
 
-type Go2faSuite struct{}
+type TwoFactorSuite struct{}
 
-var _ = Suite(&Go2faSuite{})
+var _ = Suite(&TwoFactorSuite{})
 
-func (s *Go2faSuite) TestInt64ToBytes(c *C) {
+func (s *TwoFactorSuite) TestInt64ToBytes(c *C) {
 	ints := []int64{10, 200, 3000, 40000, 500000}
 	intBytes := [][]byte{
 		[]byte{0, 0, 0, 0, 0, 0, 0, 10},
@@ -30,12 +30,12 @@ func (s *Go2faSuite) TestInt64ToBytes(c *C) {
 	}
 }
 
-func (s *Go2faSuite) TestNewSecret(c *C) {
+func (s *TwoFactorSuite) TestNewSecret(c *C) {
 	secret, _ := NewSecret(0)
 	c.Check(len(secret), Equals, 16)
 }
 
-func (s *Go2faSuite) TestSecretBytes(c *C) {
+func (s *TwoFactorSuite) TestSecretBytes(c *C) {
 	str := "thisisasecret"
 	strb, _ := base32.StdEncoding.DecodeString(str)
 	secret := Secret(str)
@@ -46,13 +46,13 @@ func (s *Go2faSuite) TestSecretBytes(c *C) {
 	}
 }
 
-func (s *Go2faSuite) TestSecretString(c *C) {
+func (s *TwoFactorSuite) TestSecretString(c *C) {
 	str := "thisisasecret"
 	secret := Secret(str)
 	c.Check(secret.String(), Equals, str)
 }
 
-func (s *Go2faSuite) BenchmarkNewSecret(c *C) {
+func (s *TwoFactorSuite) BenchmarkNewSecret(c *C) {
 	for i := 0; i < c.N; i++ {
 		NewSecret(0)
 	}

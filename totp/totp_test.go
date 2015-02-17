@@ -3,7 +3,7 @@ package totp
 import (
 	"testing"
 
-	"github.com/zhevron/go2fa"
+	"github.com/zhevron/twofactor"
 	. "gopkg.in/check.v1"
 )
 
@@ -12,14 +12,14 @@ func Test(t *testing.T) {
 }
 
 type TOTPSuite struct {
-	secret go2fa.Secret
+	secret twofactor.Secret
 	totp   *TOTP
 }
 
 var _ = Suite(&TOTPSuite{})
 
 func (s *TOTPSuite) SetUpTest(c *C) {
-	s.secret, _ = go2fa.NewSecret(0)
+	s.secret, _ = twofactor.NewSecret(0)
 	s.totp = NewTOTP(s.secret, 0, 0)
 }
 
