@@ -6,10 +6,10 @@
 //
 // To be able to generate codes, you need to create a TOTP object using a secret:
 //		import (
-//			"gopkg.in/zhevron/go2fa.v1"
-//			"gopkg.in/zhevron/go2fa.v1/totp"
+//			"gopkg.in/zhevron/twofactor.v1"
+//			"gopkg.in/zhevron/twofactor.v1/totp"
 //		)
-//		secret := go2fa.NewSecret(0)
+//		secret := twofactor.NewSecret(0)
 //		otp := totp.NewTOTP(secret, 0, 0)
 //
 // After creating the TOTP object, you can easily generate the current code by calling the Code method:
@@ -33,12 +33,12 @@ import (
 	"math"
 	"time"
 
-	"github.com/zhevron/go2fa"
+	"github.com/zhevron/twofactor"
 )
 
 // TOTP implements time-based one time passwords as specified in RFC6238 (http://tools.ietf.org/html/rfc6238).
 type TOTP struct {
-	secret   go2fa.Secret
+	secret   twofactor.Secret
 	length   int
 	duration int
 }
@@ -46,7 +46,7 @@ type TOTP struct {
 // NewTOTP makes a new TOTP object for generating OTP codes from a given Secret.
 // If length is 0 or less, it will default to a length of 6.
 // If duration is 0 or less, it will default to a duration of 30 seconds.
-func NewTOTP(s go2fa.Secret, length int, duration int) *TOTP {
+func NewTOTP(s twofactor.Secret, length int, duration int) *TOTP {
 	if length <= 0 {
 		length = 6
 	}
@@ -66,7 +66,7 @@ func (t TOTP) Code() (int32, error) {
 }
 
 // Secret returns the secret for this TOTP object.
-func (t TOTP) Secret() go2fa.Secret {
+func (t TOTP) Secret() twofactor.Secret {
 	return t.secret
 }
 
@@ -107,7 +107,7 @@ func (t TOTP) generateCode(n int64) (int32, error) {
 	b, err := t.secret.Bytes()
 	if err == nil {
 		h := hmac.New(sha1.New, b)
-		h.Write(go2fa.Int64ToBytes(n))
+		h.Write(twofactor.Int64ToBytes(n))
 		hash := h.Sum(nil)
 		offset := int((len(hash) - 1) & 0xf)
 		binary := int32(hash[offset]&0x7f)<<24 |
