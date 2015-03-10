@@ -7,11 +7,11 @@ twofactor - Two-factor authentication library
 **twofactor** is a library for handling two-factor authentication in [Go](https://golang.org/).  
 To use the library, you need to install one of the implementations below.
 
-## YAML
+## TOTP
 
 [![GoDoc](https://godoc.org/github.com/zhevron/twofactor/totp?status.svg)](https://godoc.org/github.com/zhevron/twofactor/totp)
 
-This implementation reads and writes [YAML](http://www.yaml.org/) files.
+This implementation generates and verifies codes using the time-based one time password (TOTP) algorithm specified in [RFC6238](https://tools.ietf.org/html/rfc6238).
 
 ```
 go get gopkg.in/zhevron/twofactor.v1/totp
