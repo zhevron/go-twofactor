@@ -14,7 +14,7 @@ To use the library, you need to install one of the implementations below.
 This implementation generates and verifies codes using the time-based one time password (TOTP) algorithm specified in [RFC6238](https://tools.ietf.org/html/rfc6238).
 
 ```
-go get gopkg.in/zhevron/twofactor.v1/totp
+go get gopkg.in/zhevron/go-twofactor.v1/totp
 ```
 
 ## License

@@ -6,8 +6,8 @@
 //
 // To be able to generate codes, you need to create a TOTP object using a secret:
 //		import (
-//			"gopkg.in/zhevron/twofactor.v1"
-//			"gopkg.in/zhevron/twofactor.v1/totp"
+//			"gopkg.in/zhevron/go-twofactor.v1"
+//			"gopkg.in/zhevron/go-twofactor.v1/totp"
 //		)
 //		secret := twofactor.NewSecret(0)
 //		otp := totp.NewTOTP(secret, 0, 0)

@@ -7,7 +7,7 @@
 // This package provides shared structs and functions for all implementations.
 //
 // To generate a new secret for 2FA, use the NewSecret method:
-//		import "gopkg.in/zhevron/twofactor.v1"
+//		import "gopkg.in/zhevron/go-twofactor.v1"
 //		secret := twofactor.NewSecret(0)
 package twofactor
 
