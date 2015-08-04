@@ -15,6 +15,6 @@ build:
     - script:
         name: go test
         code: |
-          go test ./...
+          go test -v ./... -check.v -check.b
     - zhevron/goveralls:
         token: $COVERALLS_TOKEN
