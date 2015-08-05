@@ -3,8 +3,8 @@ package totp
 import (
 	"testing"
 
-	"github.com/zhevron/twofactor"
 	. "gopkg.in/check.v1"
+	twofactor "gopkg.in/zhevron/go-twofactor.v1"
 )
 
 func Test(t *testing.T) {

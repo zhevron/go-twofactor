@@ -33,7 +33,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/zhevron/twofactor"
+	twofactor "gopkg.in/zhevron/go-twofactor.v1"
 )
 
 // TOTP implements time-based one time passwords as specified in RFC6238 (http://tools.ietf.org/html/rfc6238).
